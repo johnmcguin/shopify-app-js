@@ -1,5 +1,5 @@
 import pg from 'pg';
-import {RdbmsConnection} from '@shopify/shopify-app-session-storage';
+import { RdbmsConnection } from '@shopify/shopify-app-session-storage';
 
 export class PostgresConnection implements RdbmsConnection {
   sessionStorageIdentifier: string;
@@ -63,6 +63,11 @@ export class PostgresConnection implements RdbmsConnection {
     return decodeURIComponent(this.dbUrl.pathname.slice(1));
   }
 
+  public getSSL(): boolean | pg.ClientConfig['ssl'] | undefined {
+    const ssl = this.dbUrl.searchParams.get('ssl');
+    return ssl ? JSON.parse(ssl) : undefined;
+  }
+
   async hasTable(tablename: string): Promise<boolean> {
     await this.ready;
     const query = `
@@ -89,6 +94,7 @@ export class PostgresConnection implements RdbmsConnection {
       password: decodeURIComponent(this.dbUrl.password),
       database: this.getDatabase(),
       port: Number(this.dbUrl.port),
+      ssl: this.getSSL()
     });
   }
 }
