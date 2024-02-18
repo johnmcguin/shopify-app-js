@@ -3,7 +3,8 @@
   "version": "3.0.0",
   "description": "Shopify App Session Storage for PostgreSQL",
   "scripts": {
-    "postinstall": "tsc"
+    "postinstall": "npm run build",
+    "build": "tsc -p ./tsconfig.json"
   },
   "repository": {
     "type": "git",
