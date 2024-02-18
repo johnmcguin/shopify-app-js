@@ -1,0 +1,12 @@
+node_modules
+.DS_STORE
+yarn-error.log
+dist/
+build/
+coverage/
+tsdocs/
+tsconfig.tsbuildinfo
+database.sqlite
+tmp/
+.loom
+.vscode/

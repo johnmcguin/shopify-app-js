@@ -2,6 +2,7 @@
   "name": "@shopify/shopify-app-session-storage-postgresql",
   "version": "3.0.0",
   "description": "Shopify App Session Storage for PostgreSQL",
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Shopify/shopify-app-js.git"
@@ -14,7 +15,6 @@
   "license": "MIT",
   "main": "./build/cjs/postgresql.js",
   "types": "./build/ts/postgresql.d.ts",
-  "scripts": {},
   "publishConfig": {
     "access": "public"
   },
@@ -40,8 +40,8 @@
     "@shopify/shopify-app-session-storage": "^2.1.0"
   },
   "devDependencies": {
-    "@shopify/shopify-app-session-storage-test-utils": "^2.0.0",
-    "@types/pg": "^8.11.0"
+    "@types/pg": "^8.11.0",
+    "typescript": "^5.3.3"
   },
   "files": [
     "build/*",
