@@ -2,7 +2,9 @@
   "name": "@shopify/shopify-app-session-storage-postgresql",
   "version": "3.0.0",
   "description": "Shopify App Session Storage for PostgreSQL",
-  "scripts": {},
+  "scripts": {
+    "postinstall": "tsc"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Shopify/shopify-app-js.git"
